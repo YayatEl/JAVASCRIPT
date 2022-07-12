@@ -1,80 +1,39 @@
-let fullname="nama saya faratriadi";
-const tidakdpatdirubah="nama aplikasi";
+const value1='1';
+const value2=parseInt(value1);
 
-
-document.writeln("<br>"+fullname+"<br>")
-document.writeln("<br>"+tidakdpatdirubah+"<br>")
-
-const stringTemplate=`name:${fullname}`;
-document.writeln(stringTemplate)
-const value1="1";
-const value2=1;
-let hasil=parseInt(value1)+value2
-document.writeln(hasil)
-const deskripsieko=`<p>nama saya eko, 
-suka tidur suka makan
-dan suka main game<p>`
-
-document.writeln(deskripsieko)
-
-let arrayKosong=[]
-
-arrayKosong=["asfdafa",1,1,9.0,true]
-document.writeln(arrayKosong)
-document.writeln(arrayKosong[0])
-const names=[]
-
-names.push("adi","budi");
-console.table(names);
-/**
- * kita bisa memasukka array didalam array
- * javascript tidak dapat menggunakan assosisatif array yang index string
- */
-let array1=[1,2,3];
-let array2=[1,array1,6];
-document.writeln(array2);
-
- /**
-  * tipe data object dapat menggunakan string disebut attribute {}
-  */
-
-
- const tipedataobject={
-nama:"edi",
-umur:30,
-
- };
-
-//tipedataobject["nama"]="budi";
-
- document.writeln(tipedataobject.nama);
- console.table(tipedataobject);
-
- let name;
-
-
- if (name===undefined) {
-     alert("undifined")
-    } else {
-     alert("difined")
-     
-}
 const fullnames={
 firstname:"ekot",
-lastname:"kurniawan"
+lastname:"kurniawan",
+
+}
+with(fullnames){
+
+    document.writeln(`<p>${firstname}`)
+    document.writeln(`<p>${lastname}`)
 
 }
 
-const prop= "firstname"in fullnames
-
-if (prop==true) {
-    alert("ada")
+for (const key in fullnames) {
+    print(`<p>${fullnames[key]}
+    </p>`)
 }
-let parameter;
-fullnames.firstname=="eko"? alert("selamat anda lulus"):alert("silahkan coba lagi")
+/**
+ * for of tidak bisa untuk iterasi object hanya array non iterable
+ */
 
-data=parameter;
+const batang =['baco','becce']//array
+for (const names of batang) {
+print(names)
+    
+}
 
-data=parameter?? "nilai default"
+function print(message) {
+    document.writeln(message)
+}
 
-alert(data)
+function penambahanValue(a ,b) {
+    return a+b
+    
+}
+
+print(penambahanValue(2,5))
